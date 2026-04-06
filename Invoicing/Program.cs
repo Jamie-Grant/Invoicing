@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Invoicing.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<InvoicingContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("InvoicingContext") ?? throw new InvalidOperationException("Connection string 'InvoicingContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
