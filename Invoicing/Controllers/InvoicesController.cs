@@ -50,8 +50,6 @@ namespace Invoicing.Controllers
         }
 
         // POST: Invoices/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,CompanyName,CompanyAddress,CompanyEmail,CustomerName,CustomerAddress,Services,Amount,AccountNumber,SortCode,IssueDate,DueDate")] Invoice invoice)
@@ -82,8 +80,6 @@ namespace Invoicing.Controllers
         }
 
         // POST: Invoices/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,CompanyName,CompanyAddress,CompanyEmail,CustomerName,CustomerAddress,Services,Amount,AccountNumber,SortCode,IssueDate,DueDate")] Invoice invoice)

@@ -1,4 +1,6 @@
-﻿namespace Invoicing.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Invoicing.Models
 {
     public class Invoice
     {
@@ -13,7 +15,8 @@
         public int Amount { get; set; }
         public int AccountNumber { get; set; }
         public int SortCode { get; set; }
-        public DateTime IssueDate { get; set; }
+        public DateOnly IssueDate = DateOnly.FromDateTime(DateTime.Now);
+        [DataType(DataType.Date)]
         public DateTime DueDate { get; set; }
     }
 }
